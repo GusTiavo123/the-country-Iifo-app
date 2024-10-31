@@ -41,6 +41,7 @@ app.get("/api/country/:code", async (req, res) => {
     const countryFlag = await getCountryFlag(countryInfo.commonName);
 
     return res.status(200).json({
+      name: countryInfo.commonName,
       borders: countryBoundaries,
       population: countryPopulation,
       flag: countryFlag,
